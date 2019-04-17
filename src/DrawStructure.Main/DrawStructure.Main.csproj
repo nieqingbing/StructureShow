@@ -98,9 +98,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StructureShow.Infrastructure\StructureShow.Infrastructure.csproj">
+    <ProjectReference Include="..\StructureShow.Infrastructure\DrawStructure.Infrastructure.csproj">
       <Project>{a42c453a-881f-4a6f-afa5-708a73c38bfe}</Project>
-      <Name>StructureShow.Infrastructure</Name>
+      <Name>DrawStructure.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
