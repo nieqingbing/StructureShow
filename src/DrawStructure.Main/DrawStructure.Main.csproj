@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Control\DiagramViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +67,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Control\Diagram.cs" />
+    <Compile Include="Control\DiagramConnector.cs" />
+    <Compile Include="Control\DiagramGroup.cs" />
+    <Compile Include="Control\DiagramLogic.cs" />
+    <Compile Include="Control\DiagramNode.cs" />
+    <Compile Include="Control\DiagramRow.cs" />
+    <Compile Include="Control\DiagramViewer.xaml.cs">
+      <DependentUpon>DiagramViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalData.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Comments.cs" />
+    <Compile Include="Model\ParentSet.cs" />
+    <Compile Include="Model\ParentSetCollection.cs" />
+    <Compile Include="Model\Photo.cs" />
+    <Compile Include="Model\Relationship.cs" />
+    <Compile Include="Model\RelationshipHelper.cs" />
+    <Compile Include="Model\Shape.cs" />
+    <Compile Include="Model\UML.cs" />
+    <Compile Include="OPCUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,10 +121,11 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StructureShow.Infrastructure\DrawStructure.Infrastructure.csproj">
+    <ProjectReference Include="..\DrawStructure.Infrastructure\DrawStructure.Infrastructure.csproj">
       <Project>{a42c453a-881f-4a6f-afa5-708a73c38bfe}</Project>
       <Name>DrawStructure.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
