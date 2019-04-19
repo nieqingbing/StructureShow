@@ -6,7 +6,234 @@
         xmlns:local="clr-namespace:DrawStructure.Main"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Window.Resources>
+
+        <!-- Animation for showing the Person Info control -->
+        <Storyboard x:Key="ShowPersonInfo"
+                    Completed="ShowPersonInfo_StoryboardCompleted">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PersonInfoControl"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PersonInfoControl"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00"
+                                        Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.3000000"
+                                        Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <!-- Animation for hiding the Person Info control -->
+        <Storyboard x:Key="HidePersonInfo"
+                    Completed="HidePersonInfo_StoryboardCompleted">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)"
+                                           Storyboard.TargetName="PersonInfoControl">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PersonInfoControl"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00"
+                                        Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.3000000"
+                                        Value="{x:Static Visibility.Hidden}" />
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <!-- Animation for showing the Family Data control -->
+        <Storyboard x:Key="ShowFamilyData"
+                    Completed="ShowFamilyData_StoryboardCompleted">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="FamilyDataControl"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="FamilyDataControl"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00"
+                                        Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.3000000"
+                                        Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <!-- Animation for hiding the Family Data control -->
+        <Storyboard x:Key="HideFamilyData"
+                    Completed="HideFamilyData_StoryboardCompleted">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)"
+                                           Storyboard.TargetName="FamilyDataControl">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="FamilyDataControl"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00"
+                                        Value="{x:Static Visibility.Visible}" />
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.3000000"
+                                        Value="{x:Static Visibility.Hidden}" />
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </Window.Resources>
+
+    <!--Setup menu command bindings-->
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New"
+                        Executed="NewFamily" />
+        <CommandBinding Command="ApplicationCommands.Open"
+                        Executed="OpenFamily" />
+        <CommandBinding Command="ApplicationCommands.Save"
+                        Executed="SaveFamily" />
+        <CommandBinding Command="ApplicationCommands.Save"
+                        Executed="SaveFamily" />
+        <CommandBinding Command="ApplicationCommands.SaveAs"
+                        Executed="SaveFamilyAs" />
+        <CommandBinding Command="ApplicationCommands.Print"
+                        Executed="PrintFamily" />
+        <!--<CommandBinding Command="local:MainWindow.ImportGedcomCommand"
+                        Executed="ImportGedcom" />
+        <CommandBinding Command="local:MainWindow.ExportGedcomCommand"
+                        Executed="ExportGedcom" />
+        <CommandBinding Command="local:MainWindow.WhatIsGedcomCommand"
+                        Executed="WhatIsGedcom" />
+        <CommandBinding Command="local:MainWindow.ExportXpsCommand"
+                        Executed="ExportXps" />
+        <CommandBinding Command="local:MainWindow.ChangeSkinCommand"
+                        Executed="ChangeSkin" />-->
+    </Window.CommandBindings>
+
+
+    <DockPanel>
+        <!-- Header Area-->
+        <Border Height="50"
+                DockPanel.Dock="Top"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="0,0,0,1"
+                x:Name="HeaderBorder"
+                Padding="10,0,10,0">
+            <DockPanel x:Name="Header">
+                <TextBlock xml:space="preserve"
+                           Opacity="1"
+                           FontFamily="Segoe UI"
+                           FontSize="24"
+                           FontStretch="Normal"
+                           FontWeight="Light"
+                           TextWrapping="Wrap"
+                           Foreground="{DynamicResource HeaderFontColor}"
+                           VerticalAlignment="Bottom"
+                           Margin="0,0,0,5"><Run Foreground="#FFCFD3DA">Family</Run><Run FontWeight="Normal">.Show</Run></TextBlock>
+                <Rectangle Fill="{DynamicResource OGITREV}"
+                           Stroke="{x:Null}"
+                           HorizontalAlignment="Right"
+                           Margin="0,0,0,12"
+                           x:Name="Vertigo"
+                           Width="120"
+                           Height="18"
+                           DockPanel.Dock="Right"
+                           VerticalAlignment="Bottom"
+                           MouseLeftButtonUp="Vertigo_MouseLeftButtonUp"
+                           Cursor="Hand" />
+            </DockPanel>
+        </Border>
+
+        <!-- Menu Area -->
+        <Border x:Name="MenuBorder"
+                VerticalAlignment="Top"
+                DockPanel.Dock="Top"
+                Margin="0,5,0,5">
+            <Menu VerticalAlignment="Bottom"
+                  Margin="5,0,0,0"
+                  Style="{DynamicResource MenuStyle}">
+                <MenuItem Header="_New"
+                          x:Name="NewMenu"
+                          Command="New"
+                          Style="{DynamicResource MenuItemStyle}" />
+                <MenuItem Header="_Open"
+                          x:Name="OpenMenu"
+                          Style="{DynamicResource MenuItemStyle}" />
+                <MenuItem Header="_Save"
+                          x:Name="SaveMenu"
+                          Style="{DynamicResource MenuItemStyle}">
+                    <MenuItem Header="Save"
+                              Command="Save" />
+                    <MenuItem Header="Save As..."
+                              Command="SaveAs" />
+                    <MenuItem Header="Save to XPS..."
+                              Command="ExportXpsCommand" />
+                </MenuItem>
+                <MenuItem Header="_GEDCOM"
+                          x:Name="GedcomMenu"
+                          Style="{DynamicResource MenuItemStyle}">
+                    <MenuItem Header="Import..."
+                              Command="ImportGedcomCommand" />
+                    <MenuItem Header="Export..."
+                              Command="ExportGedcomCommand" />
+                    <MenuItem Header="What is GEDCOM?"
+                              Command="WhatIsGedcomCommand" />
+                </MenuItem>
+                <MenuItem Header="S_kins"
+                          x:Name="SkinsMenu"
+                          Style="{DynamicResource MenuItemStyle}" />
+            </Menu>
+        </Border>
+
+        <Grid x:Name="MainGrid"
+              Grid.IsSharedSizeScope="True"
+              DockPanel.Dock="Top">
+
+            <!-- Diagram Area -->
+            <Grid x:Name="DiagramPane"
+                  Margin="10,0,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <!-- The column 1 clone is used when the details area is collapsed -->
+                    <ColumnDefinition x:Name="column1CloneForLayer0"
+                                      SharedSizeGroup="column1" />
+                </Grid.ColumnDefinitions>
+                <Border Background="{DynamicResource DiagramGradientBrush}"
+                        Style="{DynamicResource BorderStyle}"
+                        x:Name="DiagramBorder">
+                    <local:DiagramViewer x:Name="DiagramControl"
+                                         Zoom="1.5" />
+                </Border>
+            </Grid>
+
+            <!-- Details Area -->
+            <Grid x:Name="DetailsPane"
+                  Margin="10,0,10,10"
+                  Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition SharedSizeGroup="column1"
+                                      Width="300" />
+                </Grid.ColumnDefinitions>
+              
+                <GridSplitter Width="5"
+                              Grid.Column="1"
+                              HorizontalAlignment="Left"
+                              Background="{DynamicResource MainBackgroundBrush}"
+                              BorderThickness="0,10,0,10" />
+            </Grid>
+
+
+        </Grid>
+    </DockPanel>
 </Window>
