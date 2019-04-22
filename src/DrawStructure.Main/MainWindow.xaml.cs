@@ -34,5 +34,55 @@ namespace DrawStructure.Main
         public static readonly RoutedCommand ChangeSkinCommand = new RoutedCommand("ChangeSkin", typeof(MainWindow));
 
         #endregion
+
+        private void ShowPersonInfo_StoryboardCompleted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HidePersonInfo_StoryboardCompleted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowFamilyData_StoryboardCompleted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HideFamilyData_StoryboardCompleted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Vertigo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void SaveFamilyAs(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveFamily(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenFamily(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void NewFamily(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void PrintFamily(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }

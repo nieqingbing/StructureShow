@@ -1,13 +1,13 @@
-﻿using System;
+﻿using DrawStructure.Main;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using StructureShow.Main.Model;
 
-namespace StructureShow.Main.Control
+namespace DrawStructure.Main
 {
     class DiagramLogic
     {

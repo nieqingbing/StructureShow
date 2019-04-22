@@ -1,4 +1,4 @@
-﻿using StructureShow.Main.Model;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace StructureShow.Main
+namespace DrawStructure.Main
 {
    public class GlobalData
     {

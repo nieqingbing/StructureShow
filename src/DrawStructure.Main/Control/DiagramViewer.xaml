@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="StructureShow.Main.Control.DiagramViewer"
+﻿<UserControl x:Class="DrawStructure.Main.DiagramViewer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:StructureShow.Main.Control"
-             xmlns:diagram="clr-namespace:StructureShow.Main.Control"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DrawStructure.Main"
+             xmlns:diagram="clr-namespace:DrawStructure.Main"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>

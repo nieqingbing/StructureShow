@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StructureShow.Main.Model
+namespace DrawStructure.Main
 {
     /// <summary>
     /// Contains the relationship logic rules for adding people and how they relate to each other.

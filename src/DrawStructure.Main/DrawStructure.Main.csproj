@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DE20FF7C-366F-46BE-9567-EB4B4705CC65}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>StructureShow.Main</RootNamespace>
-    <AssemblyName>StructureShow.Main</AssemblyName>
+    <RootNamespace>DrawStructure.Main</RootNamespace>
+    <AssemblyName>DrawStructure</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -76,11 +76,29 @@
     <Compile Include="Control\DiagramViewer.xaml.cs">
       <DependentUpon>DiagramViewer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\ComposingConverter.cs" />
+    <Compile Include="Converter\ImageConverter.cs" />
+    <Compile Include="Converter\NotConverter.cs" />
+    <Compile Include="Converter\PrimaryAvatarConverter.cs" />
+    <Compile Include="Converter\ValueConverters.cs" />
     <Compile Include="GlobalData.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Skins\Black\BlackResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Black\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Silver\SilverResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Comments.cs" />

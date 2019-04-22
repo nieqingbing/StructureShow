@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StructureShow.Main.Model
+namespace DrawStructure.Main
 {
     /// <summary>
     /// Representation for a Parent couple.  E.g. Bob and Sue

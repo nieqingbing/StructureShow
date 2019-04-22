@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawStructure.Main;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -10,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Xml.Serialization;
 
-namespace StructureShow.Main.Model
+namespace DrawStructure.Main
 {
     [Serializable]
     public class Comments : INotifyPropertyChanged

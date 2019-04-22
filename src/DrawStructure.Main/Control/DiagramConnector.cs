@@ -1,5 +1,4 @@
-﻿using StructureShow.Main.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace StructureShow.Main.Control
+namespace DrawStructure.Main
 {
     /// <summary>
     /// One of the nodes in a connection.

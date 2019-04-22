@@ -3,8 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DrawStructure.Main"
+        xmlns:local="clr-namespace:DrawStructure.Main.Control"
         mc:Ignorable="d"
+        Background="{DynamicResource MainBackgroundBrush}"
+        ResizeMode="CanResizeWithGrip"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
 
@@ -108,12 +110,7 @@
                         Executed="SaveFamilyAs" />
         <CommandBinding Command="ApplicationCommands.Print"
                         Executed="PrintFamily" />
-        <!--<CommandBinding Command="local:MainWindow.ImportGedcomCommand"
-                        Executed="ImportGedcom" />
-        <CommandBinding Command="local:MainWindow.ExportGedcomCommand"
-                        Executed="ExportGedcom" />
-        <CommandBinding Command="local:MainWindow.WhatIsGedcomCommand"
-                        Executed="WhatIsGedcom" />
+        <!--
         <CommandBinding Command="local:MainWindow.ExportXpsCommand"
                         Executed="ExportXps" />
         <CommandBinding Command="local:MainWindow.ChangeSkinCommand"
@@ -139,18 +136,7 @@
                            TextWrapping="Wrap"
                            Foreground="{DynamicResource HeaderFontColor}"
                            VerticalAlignment="Bottom"
-                           Margin="0,0,0,5"><Run Foreground="#FFCFD3DA">Family</Run><Run FontWeight="Normal">.Show</Run></TextBlock>
-                <Rectangle Fill="{DynamicResource OGITREV}"
-                           Stroke="{x:Null}"
-                           HorizontalAlignment="Right"
-                           Margin="0,0,0,12"
-                           x:Name="Vertigo"
-                           Width="120"
-                           Height="18"
-                           DockPanel.Dock="Right"
-                           VerticalAlignment="Bottom"
-                           MouseLeftButtonUp="Vertigo_MouseLeftButtonUp"
-                           Cursor="Hand" />
+                           Margin="0,0,0,5"><Run Foreground="#FFCFD3DA">Structure</Run><Run FontWeight="Normal">.Show</Run></TextBlock>
             </DockPanel>
         </Border>
 
@@ -178,16 +164,6 @@
                               Command="SaveAs" />
                     <MenuItem Header="Save to XPS..."
                               Command="ExportXpsCommand" />
-                </MenuItem>
-                <MenuItem Header="_GEDCOM"
-                          x:Name="GedcomMenu"
-                          Style="{DynamicResource MenuItemStyle}">
-                    <MenuItem Header="Import..."
-                              Command="ImportGedcomCommand" />
-                    <MenuItem Header="Export..."
-                              Command="ExportGedcomCommand" />
-                    <MenuItem Header="What is GEDCOM?"
-                              Command="WhatIsGedcomCommand" />
                 </MenuItem>
                 <MenuItem Header="S_kins"
                           x:Name="SkinsMenu"

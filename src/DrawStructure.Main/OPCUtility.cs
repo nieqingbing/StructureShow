@@ -7,7 +7,7 @@ using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StructureShow.Main
+namespace DrawStructure.Main
 {
     public class OPCUtility
     {

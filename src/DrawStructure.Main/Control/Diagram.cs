@@ -1,5 +1,4 @@
-﻿using StructureShow.Main.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace StructureShow.Main.Control
+namespace DrawStructure.Main
 {
     /// <summary>
     /// Diagram that lays out and displays the nodes.
@@ -74,7 +73,7 @@ namespace StructureShow.Main.Control
         private bool populating;
 
         // The person that has been added to the diagram.
-        private StructureShow.Main.Model.Shape newPerson;
+        private DrawStructure.Main.Shape newPerson;
 
         // Timer used with the repopulating animation.
         private DispatcherTimer animationTimer = new DispatcherTimer();
@@ -416,7 +415,7 @@ namespace StructureShow.Main.Control
                 return;
 
             // Primary row.
-            StructureShow.Main.Model.Shape primaryPerson = logic.Family.Current;
+            DrawStructure.Main.Shape primaryPerson = logic.Family.Current;
             DiagramRow primaryRow = logic.CreatePrimaryRow(primaryPerson, 1.0, Const.RelatedMultiplier);
             primaryRow.GroupSpace = Const.PrimaryRowGroupSpace;
             AddRow(primaryRow);
@@ -463,7 +462,7 @@ namespace StructureShow.Main.Control
         private DiagramRow AddChildRow(DiagramRow row)
         {
             // Get list of children for the current row.
-            List<StructureShow.Main.Model.Shape> children = DiagramLogic.GetChildren(row);
+            List<DrawStructure.Main.Shape> children = DiagramLogic.GetChildren(row);
             if (children.Count == 0)
                 return null;
 
@@ -483,7 +482,7 @@ namespace StructureShow.Main.Control
         private DiagramRow AddParentRow(DiagramRow row, double nodeScale)
         {
             // Get list of parents for the current row.
-            Collection<StructureShow.Main.Model.Shape> parents = DiagramLogic.GetParents(row);
+            Collection<DrawStructure.Main.Shape> parents = DiagramLogic.GetParents(row);
             if (parents.Count == 0)
                 return null;
 
