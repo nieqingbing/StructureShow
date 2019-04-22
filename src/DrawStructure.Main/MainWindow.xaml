@@ -3,13 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DrawStructure.Main.Control"
+        xmlns:local="clr-namespace:DrawStructure.Main"
         mc:Ignorable="d"
         Background="{DynamicResource MainBackgroundBrush}"
         ResizeMode="CanResizeWithGrip"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-
         <!-- Animation for showing the Person Info control -->
         <Storyboard x:Key="ShowPersonInfo"
                     Completed="ShowPersonInfo_StoryboardCompleted">
@@ -159,11 +158,11 @@
                           x:Name="SaveMenu"
                           Style="{DynamicResource MenuItemStyle}">
                     <MenuItem Header="Save"
-                              Command="Save" />
+                             />
                     <MenuItem Header="Save As..."
-                              Command="SaveAs" />
+                              />
                     <MenuItem Header="Save to XPS..."
-                              Command="ExportXpsCommand" />
+                               />
                 </MenuItem>
                 <MenuItem Header="S_kins"
                           x:Name="SkinsMenu"

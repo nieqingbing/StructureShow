@@ -1039,7 +1039,7 @@
               </StackPanel>
               <StackPanel MaxWidth="170" Margin="0,0,5,10">
                 <ContentPresenter Margin="0,10,10,5" />
-                <TextBlock TextWrapping="Wrap" x:Name="ParentsDatePanel" Margin="0,0,0,5">
+                <!--<TextBlock TextWrapping="Wrap" x:Name="ParentsDatePanel" Margin="0,0,0,5">
                   <Run local:BindableExtender.BindableText="{Binding Path=Person.ParentRelationshipText}" />
                   <Run Text=" of " />
                   <Run local:BindableExtender.BindableText="{Binding Path=Person.ParentsText}" />
@@ -1058,12 +1058,12 @@
                   <Run local:BindableExtender.BindableText="{Binding Path=Person.ChildRelationshipText}" />
                   <Run Text=" to " />
                   <Run local:BindableExtender.BindableText="{Binding Path=Person.ChildrenText}" />
-                </TextBlock>
+                </TextBlock>-->
               </StackPanel>
             </DockPanel>
           </Border>
           <ControlTemplate.Triggers>
-            <Trigger Property="HasDropShadow" Value="true">
+            <!--<Trigger Property="HasDropShadow" Value="true">
               <Setter TargetName="Border" Property="CornerRadius" Value="4" />
               <Setter TargetName="Border" Property="SnapsToDevicePixels" Value="true" />
             </Trigger>
@@ -1078,7 +1078,7 @@
             </DataTrigger>
             <DataTrigger Binding="{Binding Path=Person.Children.Count}" Value="0">
               <Setter TargetName="ChildrenDatePanel" Property="Visibility" Value="Collapsed" />
-            </DataTrigger>
+            </DataTrigger>-->
           </ControlTemplate.Triggers>
         </ControlTemplate>
       </Setter.Value>
