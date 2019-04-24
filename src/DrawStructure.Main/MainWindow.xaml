@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Background="{DynamicResource MainBackgroundBrush}"
         ResizeMode="CanResizeWithGrip"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <!-- Animation for showing the Person Info control -->

@@ -27,12 +27,10 @@ namespace DrawStructure.Main
 
         #region menu routed commands
 
-        public static readonly RoutedCommand ImportGedcomCommand = new RoutedCommand("ImportGedcom", typeof(MainWindow));
-        public static readonly RoutedCommand ExportGedcomCommand = new RoutedCommand("ExportGedcom", typeof(MainWindow));
-        public static readonly RoutedCommand WhatIsGedcomCommand = new RoutedCommand("WhatIsGedcom", typeof(MainWindow));
         public static readonly RoutedCommand ExportXpsCommand = new RoutedCommand("ExportXps", typeof(MainWindow));
         public static readonly RoutedCommand ChangeSkinCommand = new RoutedCommand("ChangeSkin", typeof(MainWindow));
 
+        UMLCollection family =GlobalData.Family;
         #endregion
 
         private void ShowPersonInfo_StoryboardCompleted(object sender, EventArgs e)
@@ -82,6 +80,32 @@ namespace DrawStructure.Main
 
         private void PrintFamily(object sender, ExecutedRoutedEventArgs e)
         {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {// Create a new person with the specified inputs
+            Shape newShape = new Shape("Test");
+            newShape.Comments = new Comments();
+            newShape.Avatar = "*";
+            newShape.Name = "ShapeName";
+
+
+            family.Current = newShape;
+            family.Add(newShape);
+
+            Shape newShape2 = new Shape("Test2");
+            newShape2.Comments = new Comments();
+            newShape2.Avatar = "*";
+            newShape2.Name = "ShapeName2";
+
+            newShape2.Parents.Add(newShape);
+
+            newShape.Children.Add(newShape2);
+            family.Add(newShape2);
+          
+
+            family.OnContentChanged();
 
         }
     }

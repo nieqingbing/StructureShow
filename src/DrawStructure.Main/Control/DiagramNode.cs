@@ -331,7 +331,7 @@ namespace DrawStructure.Main
         {
             // Determine the node template based on node properties.
             string template = string.Format(
-                CultureInfo.InvariantCulture, "{0}NodeTemplate",
+                CultureInfo.InvariantCulture, "Male{0}NodeTemplate",
                 (this.type == NodeType.Primary) ? "Primary" : "");
 
             // Assign the node template.                
